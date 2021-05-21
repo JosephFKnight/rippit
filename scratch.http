@@ -1,4 +1,4 @@
-@token = -F93r1Ty6D7_b7-jnr8BJDHmcpYAGDQ
+:token = -Al-1SCWgOlJ3Zg6exB2DD1sqd02g2Q
 POST https://www.reddit.com/api/v1/access_token
 Authorization: Basic aXFCaUw2MEV6OUxlZlE6Cg==
 
@@ -8,4 +8,10 @@ grant_type=https://oauth.reddit.com/grants/installed_client&device_id=DO_NOT_TRA
 
 GET https://oauth.reddit.com/hot?limit=1
 User-Agent: rippit
-Authorization: Bearer {{token}}
+Authorization: Bearer :token
+
+##
+
+GET https://oauth.reddit.com/user/i_ate_a_milkshake/about
+User-Agent: rippit
+Authorization: Bearer :token

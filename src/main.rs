@@ -1,9 +1,11 @@
-use reqwest::{header, Client};
-use rippit::get_reddit;
-use std::convert::TryFrom;
+use rippit::Reddit;
+use std::error::Error;
 
 #[tokio::main]
-async fn main() {
-    let submission = get_reddit();
-    println!("{:?}", submission);
+async fn main() -> Result<(), Box<dyn Error>> {
+    let mut r = Reddit::new("".to_owned(), None);
+    r.connect().await;
+    println!("{:#?}", r.get_hot().await?);
+    Ok(())
 }
+
